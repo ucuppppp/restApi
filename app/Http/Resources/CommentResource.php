@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class PostResource extends JsonResource
+class CommentResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,8 +16,9 @@ class PostResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'content' => $this->newsContent,
+            'isiKomen' => $this->commentContents,
+            'user_id' => $this->user_id,
+            'username' => $this->whenLoaded('comentator'),
             'waktuDibuat' => date_format($this->created_at, "Y-m-d H:i:s")
         ];
     }
