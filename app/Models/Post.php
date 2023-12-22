@@ -12,7 +12,7 @@ class Post extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['title', 'newsContent', 'author'];
+    protected $fillable = ['title', 'newsContent', 'author', 'image'];
 
     /**
      * Get the user that owns the Post
